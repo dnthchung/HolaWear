@@ -26,14 +26,17 @@ async function checkExistRole(req, res, next) {
   try {
     if (req.body.role) {
       const role = await Role.findOne({ name: req.body.role }).exec();
-      if (!role) {
-        throw createHttpError.BadRequest("Role not found");
-      }
+      if (!role) throw createHttpError.BadRequest("Role not found");
     }
     next();
   } catch (error) {
     next(error);
   }
+}
+
+async function verifySignIn(req, res, next) {
+  //verify authentication
+  const data = req.headers;
 }
 
 module.exports = {

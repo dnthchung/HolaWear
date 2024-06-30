@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const brandSchema = new Schema(
   {
     name: { type: String, required: true },
-    description: { type: String, required: true },
+    description: { type: String },
     image: { type: String, default: "" }, // Đường dẫn đến hình ảnh của thương hiệu, mặc định là rỗng
   },
   { timestamps: true },

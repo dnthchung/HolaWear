@@ -8,10 +8,12 @@ async function checkExistUser(req, res, next) {
   try {
     //kiểm soát trước khi đưa xung model
     if (!req.body.email || !req.body.password || !req.body.name) {
-      throw createHttpError.BadRequest("Missing email, password or name");
+      // throw createHttpError.BadRequest("Missing email, password or name"); - trả li về cho BE thì dùng cái này
+      res.status(400).json({ message: "Missing email, password or name" }); //-trả li về FE thì dùng cái này
     }
     if (await User.findOne({ email: req.body.email })) {
-      throw createHttpError.BadRequest(`${req.body.email} is already registered`);
+      // throw createHttpError.BadRequest(`${req.body.email} is already registered`);
+      res.status(400).json({ message: `${req.body.email} is already registered` });
     }
     next();
   } catch (error) {

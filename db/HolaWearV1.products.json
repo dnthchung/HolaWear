@@ -1,0 +1,554 @@
+[{
+  "_id": {
+    "$oid": "66803f206980cbef1d1b1f98"
+  },
+  "title": "ÁO POLO 3 SỌC CLASSICS ADICOLOR",
+  "description": "Mô tả sản phẩm ở đây.",
+  "category": "668036786980cbef1d1b1f7a",
+  "price": 0,
+  "discountPercentage": 10,
+  "rating": 0,
+  "stock": 0,
+  "type": "668034546980cbef1d1b1f54",
+  "tags": "668034b16980cbef1d1b1f5b",
+  "brand": "6680361f6980cbef1d1b1f70",
+  "createdAt": "2024-05-23T08:56:21.618Z",
+  "updatedAt": "2024-05-23T08:56:21.618Z",
+  "availabilityStatus": "InActive",
+  "reviews": [],
+  "returnPolicy": "30 days return policy",
+  "minimumOrderQuantity": 1,
+  "images": [
+    "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e772fb1998dc422da71cafc9009c858c_9366/Ao_Polo_3_Soc_Classics_Adicolor_Xam_IL2502_23_hover_model.jpg",
+    "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e772fb1998dc422da71cafc9009c858c_9366/Ao_Polo_3_Soc_Classics_Adicolor_Xam_IL2502_23_hover_model.jpg"
+  ],
+  "thumbnail": "https://assets.adidas.com/images/w_600,f_auto,q_auto/7b0fd4e7fa784cb9a73fafc9009c7cd4_9366/Ao_Polo_3_Soc_Classics_Adicolor_Xam_IL2502_21_model.jpg",
+  "stockDetails": [
+    {
+      "colorCode": "#FF0000",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#008000",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#0000FF",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#FFFF00",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#FFA500",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#800080",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#FFC0CB",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#A52A2A",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#808080",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#000000",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6680408b6980cbef1d1b1f9b"
+  },
+  "title": "ÁO POLO LƯỚI CỔ ĐỨNG PREMIUM 3 SỌC ARCHIVE 80S",
+  "description": "Mô tả sản phẩm ở đây nè.",
+  "category": "668036786980cbef1d1b1f7a",
+  "price": 5000000,
+  "discountPercentage": 10,
+  "rating": 0,
+  "stock": 20,
+  "type": "668034546980cbef1d1b1f54",
+  "tags": "668034b16980cbef1d1b1f5b",
+  "brand": "6680361f6980cbef1d1b1f70",
+  "availabilityStatus": "In Stock",
+  "reviews": [],
+  "returnPolicy": "30 days return policy",
+  "minimumOrderQuantity": 1,
+  "images": [
+    "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/e27c585dd0eb43c7a5c4dad0273b33ed_9366/Ao_Polo_Luoi_Co_DJung_Premium_3_Soc_Archive_80s_mau_xanh_la_JC6529_01_laydown.jpg",
+    "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/129a28fc05a94cd497d48ea75941a713_9366/Ao_Polo_Luoi_Co_DJung_Premium_3_Soc_Archive_80s_mau_xanh_la_JC6529_23_hover_model.jpg"
+  ],
+  "thumbnail": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/46e63ed0e9274aa0993d36e8f1eb55de_9366/Ao_Polo_Luoi_Co_DJung_Premium_3_Soc_Archive_80s_mau_xanh_la_JC6529_21_model.jpg",
+  "stockDetails": [
+    {
+      "colorCode": "#FF0000",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 3
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 4
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#008000",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 3
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#0000FF",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 2
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#FFFF00",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "size": "M",
+          "quantity": 3
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#FFA500",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#800080",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#FFC0CB",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#A52A2A",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#808080",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "colorCode": "#000000",
+      "details": [
+        {
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "size": "M",
+          "quantity": 0
+        },
+        {
+          "size": "L",
+          "quantity": 0
+        },
+        {
+          "size": "XL",
+          "quantity": 0
+        },
+        {
+          "size": "2XL",
+          "quantity": 0
+        }
+      ]
+    }
+  ]
+}]

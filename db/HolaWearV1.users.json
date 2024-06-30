@@ -1,0 +1,83 @@
+[{
+  "_id": {
+    "$oid": "667c4bc5c78717b6230bf71a"
+  },
+  "email": "te5@gmail.com",
+  "password": "$2b$10$dDgyRy/L8yi.0MGf/pxSOOQltm1iZV6Ak4y9cYIyt5q.RIhr.TxU6",
+  "name": "te5",
+  "refreshToken": null,
+  "shippingAddress": [],
+  "role": {
+    "$oid": "667a466306364e81a2e3eacb"
+  },
+  "__v": 17
+},
+{
+  "_id": {
+    "$oid": "667e1e7d983daa0e99ca103d"
+  },
+  "email": "te6@gmail.com",
+  "password": "$2b$10$M1bUuoqKzDD21qGgIlLeo.VF/Xwd4Yk/HzDMWt.mcok3THqvHDn0e",
+  "name": "te6",
+  "shippingAddress": [],
+  "role": {
+    "$oid": "667a466306364e81a2e3eacd"
+  },
+  "__v": 0,
+  "refreshToken": null
+},
+{
+  "_id": {
+    "$oid": "667e1fb04c13e7b59d00f5a0"
+  },
+  "email": "te7@gmail.com",
+  "password": "$2b$10$T6qIrmbBhevaHpsJJgkmvOExDPkhWWux13bxpp/l6xbYuKRVrTkAC",
+  "name": "te7",
+  "shippingAddress": [],
+  "role": {
+    "$oid": "667a466306364e81a2e3eacd"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "667e1fd24c13e7b59d00f5a4"
+  },
+  "email": "te8@gmail.com",
+  "password": "$2b$10$.jvxmi2hg7SyG6J5zQAuruwfi.omgtLNUNyGKa35xzEY7ha6gt6V.",
+  "name": "te8",
+  "shippingAddress": [
+    {
+      "fullName": "Tuan Anh",
+      "phone": "111111111",
+      "address": "duong lieu - Hoai duc - Hanoi",
+      "specificAddress": "xom 9, ngo 10, duong QL11",
+      "_id": {
+        "$oid": "667e32dbe087501200e8a99d"
+      }
+    },
+    {
+      "fullName": "Tuan Anh",
+      "phone": "111111111",
+      "address": "duong lieu - Hoai duc - Hanoi",
+      "specificAddress": "xom 9, ngo 10, duong QL11",
+      "_id": {
+        "$oid": "667e3329fde1b344605a4927"
+      }
+    },
+    {
+      "fullName": "Chung",
+      "phone": "111111111",
+      "address": "duong lieu - Hoai duc - Hanoi",
+      "specificAddress": "xom 9, ngo 10, duong QL11",
+      "_id": {
+        "$oid": "667e338fa662f0fec8ba7a1d"
+      }
+    }
+  ],
+  "role": {
+    "$oid": "667a466306364e81a2e3eacd"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2UxZmQyNGMxM2U3YjU5ZDAwZjVhNCIsInJvbGUiOnsiX2lkIjoiNjY3YTQ2NjMwNjM2NGU4MWEyZTNlYWNkIiwibmFtZSI6InVzZXIifSwiaWF0IjoxNzE5Njc2Nzc1LCJleHAiOjE3MTk3NjMxNzV9.ypEul7uvpIPpxhjGCzPvdOaG9VIqHCjKOj2L62ColDM"
+}]

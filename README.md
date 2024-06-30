@@ -2,10 +2,12 @@
 
 ### Back End
 
+> `npm start` - http://localhost:9999/
+
     └── backend/
         ├── controllers/
         │   ├── index.js
-        │   ├── authController.js
+        │   ├── authContr oller.js
         │   ├── userController.js
         │   └── ...
         ├── middlewares/
@@ -28,9 +30,11 @@
         ├── note BE.txt
         ├── package-lock.json
         ├── package.json
-        └── serevr.js
+        └── server.js
 
 ### Front End
+
+> `npm run dev` - http://localhost:5173/
 
     └── frontEnd/
         ├── public

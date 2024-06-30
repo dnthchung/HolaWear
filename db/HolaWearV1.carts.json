@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "66804d8a6980cbef1d1b1fb9"
+  },
+  "userId": "667e1fd24c13e7b59d00f5a4",
+  "cartItems": [
+    {
+      "productId": "6680487e6980cbef1d1b1fa4",
+      "color": "#FF0000",
+      "size": "S",
+      "quantity": 1,
+      "price": 5000000
+    },
+    {
+      "productId": "6680487e6980cbef1d1b1fa4",
+      "color": "#FF0000",
+      "size": "L",
+      "quantity": 3,
+      "price": 5000000
+    }
+  ]
+}]
