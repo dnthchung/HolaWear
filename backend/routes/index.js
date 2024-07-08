@@ -6,6 +6,8 @@ const categoryRouter = require("./categoryRoute");
 const tagRouter = require("./tagRoute");
 const typeRouter = require("./typeRoute");
 const productDepotRouter = require("./productDepotRoute");
+const brandRouter = require("./brandRoute");
+const colorRouter = require("./colorRoute");
 module.exports = {
   roleRouter,
   userRouter,
@@ -16,4 +18,6 @@ module.exports = {
   typeRouter,
   productDepotRouter,
   typeRouter,
+  brandRouter,
+  colorRouter,
 };
