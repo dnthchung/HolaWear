@@ -3,6 +3,8 @@
 ### database
 
 - Dùng các file json ở folder `db` để import vào `db local`
+- Username : chungdthe176077
+- Pass : Chung1234567890
 
 ### Back End
 

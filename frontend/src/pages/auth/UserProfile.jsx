@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import ChangePassword from "../../components/auth/ChangePassword";
 import ChangeGeneral from "../../components/auth/ChangeGeneral";
 import ShippingAddress from "../../components/auth/ShippingAddress";
-
+import YourOrder from "../../components/auth/YourOrder";
+import { UserContext } from "@/App";
 const UserProfile = () => {
+  const { userAuth, setUserAuth } = useContext(UserContext);
+
   return (
     <>
       <div className="container mx-auto rounded bg-white mt-5 mb-5">
@@ -17,8 +20,8 @@ const UserProfile = () => {
                 src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
                 alt="Profile"
               />
-              <span className="font-bold">Đỗ Đức Thiện</span>
-              <span className="text-gray-500">thiendd03@gmail.com</span>
+              <span className="font-bold">{userAuth?.user?.name}</span>
+              <span className="text-gray-500">{userAuth?.user?.email}</span>
             </div>
           </div>
 
@@ -33,7 +36,9 @@ const UserProfile = () => {
                     Change Password
                   </TabsTrigger>
                   <TabsTrigger value="address">Shipping Address</TabsTrigger>
+                  <TabsTrigger value="order">Your Orders</TabsTrigger>
                 </TabsList>
+                {/* tab content */}
                 <TabsContent value="general" className="w-full">
                   <ChangeGeneral />
                 </TabsContent>
@@ -42,6 +47,9 @@ const UserProfile = () => {
                 </TabsContent>
                 <TabsContent value="address">
                   <ShippingAddress />
+                </TabsContent>
+                <TabsContent value="order">
+                  <YourOrder />
                 </TabsContent>
               </Tabs>
             </div>

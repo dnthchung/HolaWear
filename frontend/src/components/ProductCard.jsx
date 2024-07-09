@@ -42,18 +42,12 @@ const ProductCard = ({ product }) => {
           </div>
           <p className="text-xl font-bold text-gray-800">{product.price} đ</p>
           <div className="flex space-x-2 mt-2">
-            {Object.keys(product.stockDetails).map((color) => (
-              <div key={color} className="w-5 h-5 rounded-full" style={{ backgroundColor: color }}></div>
+            {product.stockDetails.map((detail) => (
+              <div key={detail.colorCode} className="w-5 h-5 rounded-full" style={{ backgroundColor: detail.colorCode }}></div>
             ))}
           </div>
         </div>
       </Link>
-      <div className="flex justify-between items-center p-4 mt-4">
-        <button className="bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow flex items-center">
-          <CiShoppingCart className="h-5 w-5 opacity-75 hover:opacity-100 text-black" size={24} />
-          <span> - Add to Cart</span>
-        </button>
-      </div>
     </div>
   );
 };

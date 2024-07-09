@@ -51,44 +51,16 @@ const getProductById = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// GET  product by category ID
-const getProductByCategoryId = async (req, res) => {
-  try {
-    const categoryId = req.params.id;
-
-    // Kiểm tra xem categoryId có phải là ObjectId hợp lệ không
-    if (!mongoose.Types.ObjectId.isValid(categoryId)) {
-      return res.status(400).json({ message: "Invalid category ID" });
-    }
-
-    const categoryExists = await Category.findById(categoryId);
-    if (!categoryExists) {
-      return res.status(404).json({ message: "Category not found" });
-    }
-
-    const products = await Product.find({ category: categoryId }).populate("category", "name").populate("brand", "name").populate("type", "name").populate("tag", "name");
-
-    if (products.length === 0) {
-      return res.status(404).json({ message: "Products not found" });
-    }
-
-    res.status(200).json(products);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
 
 // POST create a new product
 const createProduct = async (req, res) => {
   try {
-
     const { title, description, category, price, discountPercentage, rating, stock, type, availabilityStatus, minimumOrderQuantity, images, thumbnail, reviews, tag, brand } = req.body;
     const stockDetails = req.body.stockDetails;
     const categoryObject = await Category.findById(category);
     const tagObject = await Tag.findById(tag);
     const brandObject = await Brand.findById(brand);
     const typeObject = await Type.findById(type);
-
 
     // Create a new product instance
     const newProduct = new Product({
@@ -236,4 +208,31 @@ const updateProductStatus = async (req, res) => {
   }
 };
 
-module.exports = { updateProductStatus, getProductByCategoryId, getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, importProducts };
+//PUT update product price by product id
+const updateProductPrice = async (req, res) => {
+  try {
+    const productId = req.params.productId;
+    const newPrice = req.body.newPrice;
+
+    // Find the product by ID
+    const productFound = await Product.findById(productId);
+
+    // If the product is not found, throw an error
+    if (!productFound) {
+      throw new Error("Product not found");
+    }
+
+    // Update the price if newPrice is not undefined or null
+    if (newPrice !== undefined && newPrice !== null) {
+      //line 227 : check xem cái input người dùng có phải là số || null không, ko thì mới update
+      productFound.price = newPrice ? newPrice : productFound.price;
+    }
+
+    const updatedProduct = await productFound.save();
+    res.status(200).json({ message: "Product price updated successfully", updatedProduct });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { updateProductPrice, updateProductStatus, getProductByCategoryId, getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, importProducts };

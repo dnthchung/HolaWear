@@ -27,4 +27,6 @@ productRouter.post("/import", ProductController.importProducts);
 //PUT update product status
 productRouter.put("/status/:productId", ProductController.updateProductStatus);
 
+//PUT update product price by product id
+productRouter.put("/update-price/:productId", ProductController.updateProductPrice);
 module.exports = productRouter;

@@ -7,10 +7,11 @@ const ProductList = ({ category }) => {
   const [products, setProducts] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([0, 1000000]);
-  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedBrands, setSelectedBrands] = useState([]); // Ensure this is initialized as an array
   const [showSidebar, setShowSidebar] = useState(true);
   const [sortOption, setSortOption] = useState("newest");
   const [categories, setCategories] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // Add state for search query
 
   // Fetch categories
   useEffect(() => {
@@ -22,7 +23,6 @@ const ProductList = ({ category }) => {
         console.error("Error fetching categories:", error);
       }
     };
-
     fetchCategories();
   }, []);
 
@@ -39,7 +39,6 @@ const ProductList = ({ category }) => {
         console.error("Error fetching products:", error);
       }
     };
-
     if (categories.length > 0) {
       fetchProducts();
     }
@@ -67,14 +66,14 @@ const ProductList = ({ category }) => {
   };
 
   const filteredProducts = products.filter((product) => {
-    console.log("Filtering product:", product); // Log từng product
-    return (
-      product.category?.name.toLowerCase() === category.toLowerCase() && // Check category
-      (selectedColors.length === 0 || selectedColors.some((color) => product.stockDetails.some((detail) => detail.colorCode === color))) &&
-      product.price >= selectedPrices[0] &&
-      product.price <= selectedPrices[1] &&
-      (selectedBrands.length === 0 || selectedBrands.includes(product.brand.name))
-    );
+    const matchesCategory = product.category?.name.toLowerCase() === category.toLowerCase();
+    const matchesColor = selectedColors.length === 0 || selectedColors.some((color) => product.stockDetails.some((detail) => detail.colorCode === color));
+    const matchesPrice = product.price >= selectedPrices[0] && product.price <= selectedPrices[1];
+    const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand.name);
+    const matchesSearchQuery = product.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesStatus = product.availabilityStatus?.toLowerCase() === "in stock"; // Use availabilityStatus
+
+    return matchesCategory && matchesColor && matchesPrice && matchesBrand && matchesSearchQuery && matchesStatus;
   });
 
   const sortedProducts = sortProducts(filteredProducts);
@@ -107,12 +106,15 @@ const ProductList = ({ category }) => {
               </select>
             </div>
           </div>
+          <div className="flex justify-between items-center mb-4">
+            <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search by product title" className="bg-gray-200 p-2 rounded w-full" />
+          </div>
           <h1 className="text-3xl font-bold mb-4">
             {category.charAt(0).toUpperCase() + category.slice(1)} Products ({filteredProducts.length})
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {sortedProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product._id} product={product} />
             ))}
           </div>
         </div>

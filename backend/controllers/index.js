@@ -8,7 +8,12 @@ const CategoryController = require("./categoryController");
 const productDepotController = require("./productDepotController");
 const brandController = require("./brandController");
 const colorController = require("./colorController");
+const CartController = require("./cartController");
+const OrderController = require("./orderController");
+
 module.exports = {
+  OrderController,
+  CartController,
   UserController,
   RoleController,
   AuthController,

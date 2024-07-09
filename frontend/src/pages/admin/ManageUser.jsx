@@ -1,20 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import UserTable from "../../components/UserTable";
 
-const ManageUser = ({ users, roles, loginTypes }) => {
-  const handleDelete = (userId) => {
-    // Implement delete functionality
-    console.log("dele:" + userId);
-  };
-
-  const handleEdit = (userId) => {
-    // Implement edit functionality
-    console.log("edit" + userId);
-  };
+const ManageUser = () => {
+  const [loginTypes, setLoginTypes] = useState([]); // Giả sử bạn có một API để lấy loại đăng nhập nếu cần thiết
 
   return (
     <div>
-      <UserTable users={users} roles={roles} loginTypes={loginTypes} onDelete={handleDelete} onEdit={handleEdit} />
+      <UserTable />
     </div>
   );
 };

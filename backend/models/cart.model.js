@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 const cartItemSchema = new Schema(
   {
+    productTitle: { type: String, required: true },
     productId: { type: Schema.Types.ObjectId, ref: "Product", required: true },
+    thumbnail: { type: String, required: true },
     color: { type: String, required: true },
     size: { type: String, required: true },
     quantity: { type: Number, required: true },

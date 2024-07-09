@@ -8,7 +8,12 @@ const typeRouter = require("./typeRoute");
 const productDepotRouter = require("./productDepotRoute");
 const brandRouter = require("./brandRoute");
 const colorRouter = require("./colorRoute");
+const cartRouter = require("./cartRoute");
+const orderRouter = require("./orderRoute");
+
 module.exports = {
+  orderRouter,
+  cartRouter,
   roleRouter,
   userRouter,
   authRouter,

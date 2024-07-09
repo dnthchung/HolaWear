@@ -4,7 +4,7 @@ import logo from "../assets/WEARIT.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-10">
+    <footer className="bg-white mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex justify-center md:justify-start items-center mb-4 md:mb-0">
@@ -19,9 +19,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
           <div className="text-center md:text-left">
-            <p className="text-gray-600">
-              Success or failure in business depends more on attitude in thinking than in ability to think.
-            </p>
+            <p className="text-gray-600">Success or failure in business depends more on attitude in thinking than in ability to think.</p>
           </div>
           <div className="text-center md:text-left ">
             <h3 className="font-bold text-gray-900 mb-2">About us</h3>

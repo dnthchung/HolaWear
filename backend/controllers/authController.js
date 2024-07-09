@@ -99,6 +99,8 @@ async function signin(req, res, next) {
     const user = await User.findOne({ email }).populate("role").exec();
     if (!user) return res.status(404).json({ message: "User not found" });
 
+    //check status account
+
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) return res.status(401).json({ message: "Wrong password" });
 

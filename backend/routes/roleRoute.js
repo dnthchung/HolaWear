@@ -7,5 +7,6 @@ roleRouter.use(bodyParser.json());
 
 //create router
 roleRouter.post("/create", RoleController.create);
+roleRouter.get("/getAll", RoleController.getAll);
 
 module.exports = roleRouter;

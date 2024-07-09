@@ -13,6 +13,7 @@ const shippingAddressSchema = new Schema(
 
 const orderItemSchema = new Schema(
   {
+    productTitle: { type: String, required: true },
     productId: { type: Schema.Types.ObjectId, ref: "Product", required: true },
     color: { type: String, required: true },
     size: { type: String, required: true },

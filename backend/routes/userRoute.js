@@ -14,8 +14,10 @@ userRouter.post("/add-address/:id", UserController.addShippingAddress);
 userRouter.delete("/delete-address/:id", UserController.deleteShippingAddress);
 
 userRouter.post("/change-password/:id", UserController.changePassword);
+userRouter.put("/change-status/:id", UserController.updateStatuslUserById);
 
 //get all users
 userRouter.get("/all", UserController.getAllUsers);
+userRouter.get("/detail/:id", UserController.getUserById);
 
 module.exports = userRouter;

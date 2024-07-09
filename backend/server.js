@@ -5,7 +5,9 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const httpError = require("http-errors");
 const db = require("./models");
-const { userRouter, roleRouter, authRouter, productRouter, categoryRouter, typeRouter, tagRouter, productDepotRouter, brandRouter, colorRouter } = require("./routes");
+
+const { orderRouter, cartRouter, userRouter, roleRouter, authRouter, productRouter, categoryRouter, typeRouter, tagRouter, productDepotRouter, brandRouter, colorRouter } = require("./routes");
+
 
 require("dotenv").config();
 
@@ -28,22 +30,27 @@ app.use("/api/product", productRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/tag", tagRouter);
 app.use("/api/type", typeRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 app.use("/api/depotProduct", productDepotRouter);
+
 app.use("/api/brand", brandRouter);
 app.use("/api/color", colorRouter);
 
-// app.use(async (req, res, next) => {
-//   next(httpError.NotFound());
-// });
-// app.use((error, req, res, next) => {
-//   res.status(error.status || 500);
-//   res.send({
-//     error: {
-//       status: error.status || 500,
-//       message: error.message,
-//     },
-//   });
-// });
+
+app.use(async (req, res, next) => {
+  next(httpError.NotFound());
+});
+app.use((error, req, res, next) => {
+  res.status(error.status || 500);
+  res.send({
+    error: {
+      status: error.status || 500,
+      message: error.message,
+    },
+  });
+});
+
 
 app.listen(process.env.PORT, process.env.HOST_NAME, () => {
   console.log(

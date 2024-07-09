@@ -19,7 +19,15 @@ async function create(req, res, next) {
     next(error);
   }
 }
-
+async function getAll(req, res, next) {
+  try {
+    const roles = await Role.find();
+    return res.status(200).json(roles);
+  } catch (error) {
+    next(error);
+  }
+}
 module.exports = {
   create,
+  getAll,
 };

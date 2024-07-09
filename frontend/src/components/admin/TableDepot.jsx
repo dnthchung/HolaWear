@@ -9,7 +9,7 @@ const TableDepot = ({ depotData, productData }) => {
         <table className="min-w-full divide-y divide-gray-200 table-auto">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product ID</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden">Product ID</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product Name</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Import Price</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
@@ -21,8 +21,8 @@ const TableDepot = ({ depotData, productData }) => {
           <tbody className="bg-white divide-y divide-gray-200">
             {depotData.map((depot) => (
               <tr key={depot._id}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">{depot.productId}</div>
+                <td className="px-6 py-4 whitespace-nowrap hidden">
+                  <div className="text-sm text-gray-900 ">{depot.productId}</div>
                 </td>
                 {productData.map((product) => {
                   if (product._id === depot.productId) {

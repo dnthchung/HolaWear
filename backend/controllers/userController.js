@@ -40,6 +40,7 @@ async function getAllUsers(req, res, next) {
           phone: user.phone ? user.phone : "Not provided",
           role: roleName,
           shippingAddress: user.shippingAddress?.length > 0 ? user.shippingAddress : "Not provided",
+          status: user.status,
         };
       }),
     );
@@ -93,7 +94,31 @@ async function updateGeneralUserById(req, res, next) {
     next(error);
   }
 }
+async function updateStatuslUserById(req, res, next) {
+  try {
+    //get input + find user + find role by user role id
+    const userId = req.params.id;
+    const userFound = await User.findById(userId);
+    if (userFound != null) {
+      userFound.status = !userFound.status;
 
+      var dataBack = await userFound.save();
+      if (dataBack) {
+        res.status(200).json({
+          userFound,
+        });
+      } else {
+        throw new Error("Update status user failed");
+      }
+    } else {
+      res.status(404).json({
+        message: "User not found",
+      });
+    }
+  } catch (error) {
+    next(error);
+  }
+}
 // Get user by email
 async function getUserByEmail(req, res, next) {
   try {
@@ -114,6 +139,25 @@ async function getUserByEmail(req, res, next) {
   }
 }
 
+async function getUserById(req, res, next) {
+  try {
+    const id = req.params.id;
+    await User.findOne({ _id: id })
+      .populate("role", "name")
+      .then((user) => {
+        if (user) {
+          res.status(200).json(user);
+        } else {
+          res.status(404).send("User not found");
+        }
+      })
+      .catch((error) => {
+        next(error);
+      });
+  } catch (error) {
+    next(error);
+  }
+}
 //Add shipping address by user ID
 //return shipping address(array) after adding
 async function addShippingAddress(req, res, next) {
@@ -223,4 +267,6 @@ module.exports = {
   updateGeneralUserById,
   changePassword,
   getAllUsers,
+  getUserById,
+  updateStatuslUserById,
 };
