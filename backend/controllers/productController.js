@@ -162,31 +162,31 @@ const deleteProduct = async (req, res) => {
 };
 
 // GET products by category ID
-const getProductByCategoryId = async (req, res) => {
-  try {
-    const categoryId = req.params.id;
+// const getProductByCategoryId = async (req, res) => {
+//   try {
+//     const categoryId = req.params.id;
 
-    // Kiểm tra xem categoryId có phải là ObjectId hợp lệ không
-    if (!mongoose.Types.ObjectId.isValid(categoryId)) {
-      return res.status(400).json({ message: "Invalid category ID" });
-    }
+//     // Kiểm tra xem categoryId có phải là ObjectId hợp lệ không
+//     if (!mongoose.Types.ObjectId.isValid(categoryId)) {
+//       return res.status(400).json({ message: "Invalid category ID" });
+//     }
 
-    const categoryExists = await Category.findById(categoryId);
-    if (!categoryExists) {
-      return res.status(404).json({ message: "Category not found" });
-    }
+//     const categoryExists = await Category.findById(categoryId);
+//     if (!categoryExists) {
+//       return res.status(404).json({ message: "Category not found" });
+//     }
 
-    const products = await Product.find({ category: categoryId }).populate("category", "name");
+//     const products = await Product.find({ category: categoryId }).populate("category", "name");
 
-    if (products.length === 0) {
-      return res.status(404).json({ message: "Products not found" });
-    }
+//     if (products.length === 0) {
+//       return res.status(404).json({ message: "Products not found" });
+//     }
 
-    res.status(200).json(products);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+//     res.status(200).json(products);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 // PUT update product status
 const updateProductStatus = async (req, res) => {

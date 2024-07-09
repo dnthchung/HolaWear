@@ -5,7 +5,9 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const httpError = require("http-errors");
 const db = require("./models");
-const { orderRouter, cartRouter, userRouter, roleRouter, authRouter, productRouter, categoryRouter, typeRouter, tagRouter, productDepotRouter } = require("./routes");
+
+const { orderRouter, cartRouter, userRouter, roleRouter, authRouter, productRouter, categoryRouter, typeRouter, tagRouter, productDepotRouter, brandRouter, colorRouter } = require("./routes");
+
 
 require("dotenv").config();
 
@@ -32,6 +34,10 @@ app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/depotProduct", productDepotRouter);
 
+app.use("/api/brand", brandRouter);
+app.use("/api/color", colorRouter);
+
+
 app.use(async (req, res, next) => {
   next(httpError.NotFound());
 });
@@ -45,10 +51,11 @@ app.use((error, req, res, next) => {
   });
 });
 
+
 app.listen(process.env.PORT, process.env.HOST_NAME, () => {
   console.log(
     `Server is running on port ${process.env.PORT}
-      and at : https://${process.env.HOST_NAME}:${process.env.PORT}`,
+      and at : http://${process.env.HOST_NAME}:${process.env.PORT}`,
   );
   db.connectDB();
 });
