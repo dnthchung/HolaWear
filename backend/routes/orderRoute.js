@@ -8,8 +8,8 @@ orderRouter.post("/create-order", OrderController.createOrder);
 // Get orders by user ID
 orderRouter.get("/user-orders/:id", OrderController.getOrdersByUserId);
 
-// Get all users (for admin/seller)
-orderRouter.get("/all-users", OrderController.getAllUsers);
+// Get all order of users in system (for admin/seller)
+orderRouter.get("/all-orders", OrderController.getAllOrders);
 
 // Approve order (change status from pending to shipped)
 orderRouter.post("/approve-order", OrderController.approveOrder);

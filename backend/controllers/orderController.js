@@ -21,11 +21,14 @@ const getOrdersByUserId = async (req, res, next) => {
   }
 };
 
-// GET all users (for admin/seller)
-const getAllUsers = async (req, res, next) => {
+// GET all order of users in system (for admin/seller)
+const getAllOrders = async (req, res, next) => {
   try {
-    const users = await User.find({});
-    res.status(200).json(users);
+    //get all order in db - nếu có .populate("orderItems.productId") thì sẽ lấy ra thông tin của product ứng với productId
+    const orders = await Order.find();
+
+    console.log(orders);
+    res.status(200).json(orders);
   } catch (error) {
     next(error);
   }
@@ -115,7 +118,7 @@ const userPayment = async (req, res, next) => {
 module.exports = {
   createOrder,
   getOrdersByUserId,
-  getAllUsers,
+  getAllOrders,
   approveOrder,
   cancelOrder,
   userPayment,

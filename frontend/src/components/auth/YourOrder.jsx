@@ -103,7 +103,7 @@ const YourOrder = () => {
               <SelectItem value="all">All</SelectItem>
               <SelectItem value="pending">Pending</SelectItem>
               <SelectItem value="completed">Completed</SelectItem>
-              <SelectItem value="shipped">Shipped</SelectItem>
+              <SelectItem value="shipping">Shipping</SelectItem>
               <SelectItem value="cancelled">Cancelled</SelectItem>
             </SelectGroup>
           </SelectContent>
@@ -153,7 +153,7 @@ const YourOrder = () => {
                 <p>
                   {order.orderStatus === "completed" && <span className="font-semibold text-green-500 uppercase">{order.orderStatus}</span>}
                   {order.orderStatus === "pending" && <span className="text-yellow-500 font-semibold flex">PENDING</span>}
-                  {order.orderStatus === "shipped" && <span className="font-semibold text-green-500 uppercase">{order.orderStatus}</span>}
+                  {order.orderStatus === "shipping" && <span className="font-semibold text-green-500 uppercase">{order.orderStatus}</span>}
                   {order.orderStatus === "cancelled" && <span className="font-semibold text-red-500 uppercase">{order.orderStatus}</span>}
                 </p>
               </div>

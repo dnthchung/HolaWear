@@ -8,7 +8,6 @@ const ProtectedRouteAdmin = () => {
   // const getRole = JSON.parse(getUser).role;
 
   const isAdmin = checkUserRole(token, "admin");
-  //   console.log(isAdmin);
 
   return isAdmin ? <Outlet /> : <Navigate to="*" />;
 };

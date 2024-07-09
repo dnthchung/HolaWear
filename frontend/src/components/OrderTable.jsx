@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  ArrowUpDown,
-  ChevronDown,
-  Pencil,
-  Trash2,
-  Eye,
-  ChevronLeft,
-  ChevronRight,
-  DollarSign,
-  Users,
-  Receipt,
-} from "lucide-react";
+import { ArrowUpDown, ChevronDown, Pencil, Trash2, Eye, ChevronLeft, ChevronRight, DollarSign, Users, Receipt } from "lucide-react";
 
 const OrderTable = ({ orders }) => {
   const totalRevenue = orders.reduce((acc, order) => acc + order.total, 0);
@@ -53,11 +42,7 @@ const OrderTable = ({ orders }) => {
     if (activeFilter !== "All" && activeFilter !== order.fulfillment) {
       return false;
     }
-    if (
-      searchTerm &&
-      !order.orderId.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      !order.customer.toLowerCase().includes(searchTerm.toLowerCase())
-    ) {
+    if (searchTerm && !order.orderId.toLowerCase().includes(searchTerm.toLowerCase()) && !order.customer.toLowerCase().includes(searchTerm.toLowerCase())) {
       return false;
     }
     return true;
@@ -84,11 +69,7 @@ const OrderTable = ({ orders }) => {
           <li key={number}>
             <button
               onClick={() => paginate(number)}
-              className={`px-3 py-1 border border-gray-300 rounded ${
-                currentPage === number
-                  ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  : "bg-white text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-3 py-1 border border-gray-300 rounded ${currentPage === number ? "bg-gray-200 text-gray-800 hover:bg-gray-300" : "bg-white text-gray-700 hover:bg-gray-50"}`}
             >
               {number}
             </button>
@@ -101,11 +82,7 @@ const OrderTable = ({ orders }) => {
           <li key={1}>
             <button
               onClick={() => paginate(1)}
-              className={`px-3 py-1 border border-gray-300 rounded ${
-                currentPage === 1
-                  ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  : "bg-white text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-3 py-1 border border-gray-300 rounded ${currentPage === 1 ? "bg-gray-200 text-gray-800 hover:bg-gray-300" : "bg-white text-gray-700 hover:bg-gray-50"}`}
             >
               1
             </button>
@@ -113,11 +90,7 @@ const OrderTable = ({ orders }) => {
           <li key={2}>
             <button
               onClick={() => paginate(2)}
-              className={`px-3 py-1 border border-gray-300 rounded ${
-                currentPage === 2
-                  ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  : "bg-white text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-3 py-1 border border-gray-300 rounded ${currentPage === 2 ? "bg-gray-200 text-gray-800 hover:bg-gray-300" : "bg-white text-gray-700 hover:bg-gray-50"}`}
             >
               2
             </button>
@@ -128,11 +101,7 @@ const OrderTable = ({ orders }) => {
           <li key={totalPages - 1}>
             <button
               onClick={() => paginate(totalPages - 1)}
-              className={`px-3 py-1 border border-gray-300 rounded ${
-                currentPage === totalPages - 1
-                  ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  : "bg-white text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-3 py-1 border border-gray-300 rounded ${currentPage === totalPages - 1 ? "bg-gray-200 text-gray-800 hover:bg-gray-300" : "bg-white text-gray-700 hover:bg-gray-50"}`}
             >
               {totalPages - 1}
             </button>
@@ -140,11 +109,7 @@ const OrderTable = ({ orders }) => {
           <li key={totalPages}>
             <button
               onClick={() => paginate(totalPages)}
-              className={`px-3 py-1 border border-gray-300 rounded ${
-                currentPage === totalPages
-                  ? "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  : "bg-white text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-3 py-1 border border-gray-300 rounded ${currentPage === totalPages ? "bg-gray-200 text-gray-800 hover:bg-gray-300" : "bg-white text-gray-700 hover:bg-gray-50"}`}
             >
               {totalPages}
             </button>
@@ -208,59 +173,12 @@ const OrderTable = ({ orders }) => {
             </div>
           </div>
         </div>
-
-        {/* Active Sessions */}
-        {/* <div className="bg-white shadow-sm rounded-lg p-4 flex flex-col justify-between">
-          <div className="grid grid-cols-3">
-            <div className="col-span-2">
-              <div>
-                <p className="text-xl font-semibold">{activeSessions}</p>
-                <h2 className="text-base font-normal mt-2">Active Sessions</h2>
-              </div>
-              <div className="flex items-center">
-                <span className="text-red-500">2.45% ↓</span>
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="bg-[#ecf2ff] rounded-full w-16 h-16 flex items-center justify-center">
-                <Users size={20} color="#CA5E5E" />
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        {/* Total Sessions */}
-        {/* <div className="bg-white shadow-sm rounded-lg p-4 flex flex-col justify-between">
-          <div className="grid grid-cols-3">
-            <div className="col-span-2">
-              <div>
-                <p className="text-xl font-semibold">{totalSessions}</p>
-                <h2 className="text-base font-normal mt-2">Total Sessions</h2>
-              </div>
-              <div className="flex items-center">
-                <span className="text-red-500">0.45% ↓</span>
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="bg-[#ecf2ff] rounded-full w-16 h-16 flex items-center justify-center">
-                <DollarSign size={20} color="#CA5E5E" />
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
-
       <div className="p-4 bg-white shadow-sm rounded-lg">
         <div className="grid grid-cols-5">
           <div className="col-span-2 flex justify-between items-center bg-gray-100 p-1 rounded-lg shadow-sm">
             {filters.map((filter) => (
-              <button
-                key={filter}
-                className={`px-3 py-1 rounded-md ${
-                  activeFilter === filter ? "bg-white text-black shadow-md" : "text-gray-500"
-                }`}
-                onClick={() => handleFilterChange(filter)}
-              >
+              <button key={filter} className={`px-3 py-1 rounded-md ${activeFilter === filter ? "bg-white text-black shadow-md" : "text-gray-500"}`} onClick={() => handleFilterChange(filter)}>
                 {filter}
               </button>
             ))}
@@ -297,23 +215,13 @@ const OrderTable = ({ orders }) => {
                 <td className="py-2 px-4">{order.date}</td>
                 <td className="py-2 px-4">{order.customer}</td>
                 <td className="py-2 px-4">
-                  <span
-                    className={`shadow-sm px-2 py-1 rounded-full text-sm ${
-                      order.payment === "Success" ? "bg-green-100 text-green-800" : "bg-orange-100 text-orange-800"
-                    }`}
-                  >
-                    {order.payment}
-                  </span>
+                  <span className={`shadow-sm px-2 py-1 rounded-full text-sm ${order.payment === "Success" ? "bg-green-100 text-green-800" : "bg-orange-100 text-orange-800"}`}>{order.payment}</span>
                 </td>
                 <td className="py-2 px-4">${order.total}</td>
                 <td className="py-2 px-4">{order.delivery}</td>
                 <td className="py-2 px-4">{order.items} items</td>
                 <td className="py-2 px-4">
-                  <span
-                    className={`shadow-sm px-2 py-1 rounded-full text-sm ${
-                      order.fulfillment === "Fulfilled" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-                    }`}
-                  >
+                  <span className={`shadow-sm px-2 py-1 rounded-full text-sm ${order.fulfillment === "Fulfilled" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
                     {order.fulfillment}
                   </span>
                 </td>
@@ -334,9 +242,7 @@ const OrderTable = ({ orders }) => {
         </table>
         {/* Showing ? of ? data */}
         <div className="mt-4 text-sm text-gray-700">
-          Showing {indexOfFirstOrder + 1} to{" "}
-          {indexOfLastOrder > filteredOrders.length ? filteredOrders.length : indexOfLastOrder} of{" "}
-          {filteredOrders.length} entries
+          Showing {indexOfFirstOrder + 1} to {indexOfLastOrder > filteredOrders.length ? filteredOrders.length : indexOfLastOrder} of {filteredOrders.length} entries
         </div>
         {/* Pagination and rows per page dropdown */}
         <div className="flex justify-between items-center mt-4">
@@ -362,11 +268,7 @@ const OrderTable = ({ orders }) => {
           <nav className="block">
             <ul className="flex pl-0 rounded list-none flex-wrap">
               <li>
-                <button
-                  onClick={() => paginate(currentPage - 1)}
-                  className="mr-3 px-3 py-1 border border-gray-300 rounded bg-white text-gray-700 hover:bg-gray-50"
-                  disabled={currentPage === 1}
-                >
+                <button onClick={() => paginate(currentPage - 1)} className="mr-3 px-3 py-1 border border-gray-300 rounded bg-white text-gray-700 hover:bg-gray-50" disabled={currentPage === 1}>
                   <ChevronLeft color="#a8a5a5" />
                 </button>
               </li>

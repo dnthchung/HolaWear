@@ -75,20 +75,24 @@ const Header = () => {
           </nav>
         </div>
         <div className="flex items-center">
-          <Link to="/cart" className="mr-4 relative">
-            <button
-              className="bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow flex items-center"
-              disabled={!userAuth.accessToken || userAuth.user?.role !== "user"}
-            >
-              <CiShoppingCart className="h-5 w-5 opacity-75 hover:opacity-100 text-black" />
-            </button>
-            <span className="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">12</span>
-          </Link>
-          <Link to="/wishlist" className="mr-4">
-            <button className="bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow" disabled={!userAuth.accessToken || userAuth.user?.role !== "user"}>
-              <CiHeart className="h-5 w-5 opacity-55 hover:opacity-85 text-black" />
-            </button>
-          </Link>
+          {userAuth.user?.role === "user" && (
+            <Link to="/cart" className="mr-4 relative">
+              <button
+                className="bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow flex items-center"
+                disabled={!userAuth.accessToken || userAuth.user?.role !== "user"}
+              >
+                <CiShoppingCart className="h-5 w-5 opacity-75 hover:opacity-100 text-black" />
+              </button>
+              {/* <span className="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">12</span> */}
+            </Link>
+          )}
+          {userAuth.user?.role === "user" && (
+            <Link to="/wishlist" className="mr-4">
+              <button className="bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow" disabled={!userAuth.accessToken || userAuth.user?.role !== "user"}>
+                <CiHeart className="h-5 w-5 opacity-55 hover:opacity-85 text-black" />
+              </button>
+            </Link>
+          )}
           {/* admin */}
           {userAuth.user?.role === "admin" && (
             <Link to="/admin/dashboard" className="mr-4">

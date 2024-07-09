@@ -13,7 +13,6 @@ import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import NotFoundPage from "./pages/error/NotFoundPage";
 import ForgotPasswordPage from "./pages/auth/ForgotPasswordPage";
 import UserProfile from "./pages/auth/UserProfile";
 import ProductList from "./pages/main/ProductList";
@@ -22,6 +21,9 @@ import WishList from "./pages/main/Wishlist";
 import CartPage from "./pages/main/CartPage";
 import Checkout from "./pages/main/Checkout";
 import OrderSuccess from "./components/OrderSuccess";
+
+import NotFoundPage from "./pages/error/NotFoundPage";
+import ComingSoon from "./pages/error/ComingSoon";
 
 //admin
 import AdminLayout from "./pages/admin/Layout";
@@ -77,6 +79,7 @@ function App() {
             <Route path="/cart" element={!userAuth.accessToken ? <Navigate to="/login" /> : <CartPage />} />
             <Route path="/checkout" element={!userAuth.accessToken ? <Navigate to="/login" /> : <Checkout />} />
             <Route path="/order-success" element={<OrderSuccess />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
 
             <Route path="/men" element={<ProductList category="men" />} />
             <Route path="/women" element={<ProductList category="women" />} />
@@ -88,18 +91,6 @@ function App() {
 
             {/* Admin Routes */}
 
-            {/* <Route element={<ProtectedRouteAdmin />}> */}
-            <Route element={<AdminLayout />}>
-              <Route path="/admin/dashboard" element={<Dashboard />} />
-              <Route path="/admin/brands" element={<ManageBrand />} />
-              <Route path="/admin/categories" element={<ManageCategory />} />
-              <Route path="/admin/products" element={<ManageProduct />} />
-              <Route path="/admin/users" element={<ManageUser />} />
-              <Route path="/admin/orders" element={<ManageOrder />} />
-              <Route path="/admin/colors" element={<ManageColor />} />
-              <Route path="/admin/types" element={<ManageType />} />
-              <Route path="/admin/tags" element={<ManageTag />} />
-            </Route>
             <Route element={<ProtectedRouteAdmin />}>
               <Route element={<AdminLayout />}>
                 <Route path="/admin/dashboard" element={<Dashboard />} />
@@ -114,7 +105,6 @@ function App() {
                 <Route path="/admin/tags" element={<ManageTag />} />
               </Route>
             </Route>
-            {/* </Route> */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

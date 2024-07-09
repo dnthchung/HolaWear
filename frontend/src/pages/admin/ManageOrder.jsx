@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import OrderTable from "../../components/OrderTable";
+import axios from "axios";
 
 const ManageOrder = () => {
   const orders = [
@@ -335,6 +336,21 @@ const ManageOrder = () => {
     },
   ];
 
+  const [orders2, setOrders] = useState([]);
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await axios.get("/api/orders"); // Replace with your API endpoint
+        setOrders(response.data);
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
+
+    fetchOrders();
+  }, []);
+
+  console.log(orders2);
   return (
     <div>
       <h1 className=" text-3xl font-semibold text-gray-800 my-5">Orders</h1>

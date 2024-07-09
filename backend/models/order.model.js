@@ -29,7 +29,7 @@ const orderSchema = new Schema(
     orderItems: [orderItemSchema],
     shippingAddress: shippingAddressSchema,
     totalPrice: { type: Number, required: true },
-    orderStatus: { type: String, enum: ["pending", "completed", "shipped", "cancelled"], default: "pending" },
+    orderStatus: { type: String, enum: ["pending", "completed", "shipping", "cancelled"], default: "pending" },
     isPayment: { type: Boolean, default: false },
   },
   { timestamps: true },

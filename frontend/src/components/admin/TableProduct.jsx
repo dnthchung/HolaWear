@@ -22,7 +22,6 @@ import FormAddDepot from "./FormAddDepot";
 import AdminProductDetail from "./AdminProductDetail";
 import FormAddProduct from "./FormAddProduct";
 import AddStockProduct from "./AddStockProduct";
-
 import readXlsxFile from "read-excel-file";
 import axios from "axios";
 
@@ -39,22 +38,20 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
   const [selectedTag, setSelectedTag] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [productToDelete, setProductToDelete] = useState(null);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
-
   const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
+  const handleCategorySelect = (categoryId) => {
+    setSelectedCategory(categoryId);
   };
 
-  const handleTagSelect = (tag) => {
-    setSelectedTag(tag);
+  const handleTagSelect = (tagId) => {
+    setSelectedTag(tagId);
   };
 
   const handleFileChange = (event) => {
@@ -67,40 +64,26 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
   const handleImportClick = () => {
     if (selectedFile) {
       readXlsxFile(selectedFile).then((rows) => {
-        // Assuming the first row is the header
         const headers = rows[0];
         const data = rows.slice(1).map((row) => {
           let product = {};
-
           headers.forEach((header, index) => {
             let value = row[index];
-            // Only handle double-dash-separated values for images field
-            if (header === "images") {
-              if (typeof value === "string") {
-                if (value.includes("--")) {
-                  value = value.split("--").map((url) => url.trim());
-                } else {
-                  value = [value.trim()]; // Single URL in an array
-                }
-              }
+            if (header === "images" && typeof value === "string") {
+              value = value.includes("--") ? value.split("--").map((url) => url.trim()) : [value.trim()];
             }
             product[header] = value;
           });
-
           return product;
         });
-        // Send the data to the server
         fetch("http://localhost:9999/api/product/import", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ products: data }),
         })
           .then((response) => response.json())
-          .then((data) => {
+          .then(() => {
             toast.success("Products imported successfully");
-            // Set time for reload page after 2 seconds
             setTimeout(() => {
               window.location.reload();
             }, 2000);
@@ -125,10 +108,9 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
         method: "DELETE",
       })
         .then((response) => response.json())
-        .then((data) => {
+        .then(() => {
           toast.success("Product deleted successfully");
           setProductToDelete(null);
-          // Set time for reload page after 2 seconds
           setTimeout(() => {
             window.location.reload();
           }, 1500);
@@ -143,7 +125,7 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
   const handleStatusUpdate = (productId, newStatus) => {
     axios
       .put(`http://localhost:9999/api/product/status/${productId}`, { status: newStatus })
-      .then((response) => {
+      .then(() => {
         toast.success("Product status updated successfully");
         setTimeout(() => {
           window.location.reload();
@@ -161,14 +143,13 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
   );
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-
   const handleChangePage = (newPage) => {
     setCurrentPage(newPage);
   };
 
   const handleItemsPerPageChange = (e) => {
     setItemsPerPage(parseInt(e.target.value));
-    setCurrentPage(1); // Reset to the first page
+    setCurrentPage(1);
   };
 
   const currentProducts = filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -210,10 +191,9 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
             <FormAddProduct />
           </DialogContent>
         </Dialog>
-
         <DropdownMenu>
           <DropdownMenuTrigger className="focus:outline-none bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow">
-            {selectedCategory || "Category"}
+            {categories.find((category) => category._id === selectedCategory)?.name || "Category"}
             <ChevronDown size={18} color="#c8c8cf" className="inline-block ml-2" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -223,16 +203,15 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
               All
             </DropdownMenuItem>
             {categories.map((category) => (
-              <DropdownMenuItem key={category._id} onClick={() => handleCategorySelect(category.name)}>
-                {category.name} - {category._id}
+              <DropdownMenuItem key={category._id} onClick={() => handleCategorySelect(category._id)}>
+                {category.name}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-
         <DropdownMenu>
           <DropdownMenuTrigger className="focus:outline-none bg-white hover:bg-gray-50 text-gray-800 py-1 px-2 border border-gray-200 rounded shadow">
-            {selectedTag || "Tag"}
+            {tags.find((tag) => tag._id === selectedTag)?.name || "Tag"}
             <ChevronDown size={18} color="#c8c8cf" className="inline-block ml-2" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -242,14 +221,13 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
               All
             </DropdownMenuItem>
             {tags.map((tag) => (
-              <DropdownMenuItem key={tag._id} onClick={() => handleTagSelect(tag.name)}>
-                {tag.name} - {tag._id}
+              <DropdownMenuItem key={tag._id} onClick={() => handleTagSelect(tag._id)}>
+                {tag.name}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-
       <div className="overflow-x-auto border rounded-lg">
         <table className="min-w-full divide-y divide-gray-200 table-auto">
           <thead className="bg-gray-50">
@@ -270,28 +248,8 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
                 <td className="px-6 py-4">
                   <div className="text-sm font-medium text-gray-900">{truncateText(product.title, 20)}</div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  {categories.map((category) => {
-                    if (category._id === product.category) {
-                      return (
-                        <div key={category._id} className="text-sm text-gray-900">
-                          {category.name}
-                        </div>
-                      );
-                    }
-                  })}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  {tags.map((tag) => {
-                    if (tag._id === product.tag) {
-                      return (
-                        <div key={tag._id} className="text-sm text-gray-900">
-                          {tag.name}
-                        </div>
-                      );
-                    }
-                  })}
-                </td>
+                <td className="px-6 py-4 whitespace-nowrap">{categories.find((category) => category._id === product.category)?.name || "N/A"}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{tags.find((tag) => tag._id === product.tag)?.name || "N/A"}</td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm text-gray-900">{product.stock}</div>
                 </td>
@@ -312,7 +270,6 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
                   <button className="bg-white hover:bg-gray-50 text-[#7D4600] hover:text-indigo-900 py-1 px-2 border border-gray-200 rounded shadow">
                     <Eye className="h-5 w-5 hover:opacity-85" />
                   </button>
-
                   {/* edit price */}
                   <Dialog>
                     <DialogTrigger className="ml-4 bg-white hover:bg-gray-50 text-[#6E44FF] hover:text-indigo-900 py-1 px-2 border border-gray-200 rounded shadow">
@@ -335,9 +292,6 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
                       <AddStockProduct productDataById={product} />
                     </DialogContent>
                   </Dialog>
-                  {/*  */}
-
-                  {/*  */}
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
                       <button
@@ -401,36 +355,35 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
             ))}
           </tbody>
         </table>
-
-        <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
-          <span>
-            Showing {currentProducts.length} of {filteredProducts.length} data
-          </span>
-          <div className="flex space-x-1">
-            <button onClick={() => handleChangePage(currentPage - 1)} disabled={currentPage === 1} className="px-2 py-1 border rounded">
-              Previous
+      </div>
+      <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
+        <span>
+          Showing {currentProducts.length} of {filteredProducts.length} data
+        </span>
+        <div className="flex space-x-1">
+          <button onClick={() => handleChangePage(currentPage - 1)} disabled={currentPage === 1} className="px-2 py-1 border rounded">
+            Previous
+          </button>
+          {[...Array(totalPages).keys()].map((page) => (
+            <button key={page + 1} onClick={() => handleChangePage(page + 1)} className={`px-2 py-1 border rounded ${currentPage === page + 1 ? "bg-blue-500 text-white" : ""}`}>
+              {page + 1}
             </button>
-            {[...Array(totalPages).keys()].map((page) => (
-              <button key={page + 1} onClick={() => handleChangePage(page + 1)} className={`px-2 py-1 border rounded ${currentPage === page + 1 ? "bg-blue-500 text-white" : ""}`}>
-                {page + 1}
-              </button>
-            ))}
-            <button onClick={() => handleChangePage(currentPage + 1)} disabled={currentPage === totalPages} className="px-2 py-1 border rounded">
-              Next
-            </button>
-          </div>
+          ))}
+          <button onClick={() => handleChangePage(currentPage + 1)} disabled={currentPage === totalPages} className="px-2 py-1 border rounded">
+            Next
+          </button>
         </div>
-        <div className="mt-4">
-          <label htmlFor="itemsPerPage" className="mr-2">
-            Items per page:
-          </label>
-          <select id="itemsPerPage" value={itemsPerPage} onChange={handleItemsPerPageChange} className="p-2 border rounded">
-            <option value={5}>8</option>
-            <option value={15}>16</option>
-            <option value={20}>30</option>
-            <option value={50}>50</option>
-          </select>
-        </div>
+      </div>
+      <div className="mt-4">
+        <label htmlFor="itemsPerPage" className="mr-2">
+          Items per page:
+        </label>
+        <select id="itemsPerPage" value={itemsPerPage} onChange={handleItemsPerPageChange} className="p-2 border rounded">
+          <option value={8}>8</option>
+          <option value={16}>16</option>
+          <option value={30}>30</option>
+          <option value={50}>50</option>
+        </select>
       </div>
     </div>
   );
