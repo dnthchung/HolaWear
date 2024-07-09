@@ -4,7 +4,7 @@
   },
   "name": "Adidas",
   "description": "",
-  "image": ""
+  "image": "https://i.pinimg.com/originals/ea/92/01/ea92016475357a527ab1c03c54f0b818.jpg"
 },
 {
   "_id": {
@@ -12,7 +12,7 @@
   },
   "name": "Calvin Klein",
   "description": "",
-  "image": ""
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTR2Ztpvh4K_418hQeCzYGyqhRWQdL_vBXgg&s"
 },
 {
   "_id": {
@@ -20,7 +20,7 @@
   },
   "name": "Gucci",
   "description": "",
-  "image": ""
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNg7Fb3s2vWja4KpdF2XzCNZex--npDmawpA&s"
 },
 {
   "_id": {
@@ -28,7 +28,7 @@
   },
   "name": "Lacoste",
   "description": "",
-  "image": ""
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd7dil_TSF-MDo7YmyB7PTbhI1Yo7vl2m2Og&s"
 },
 {
   "_id": {
@@ -36,7 +36,7 @@
   },
   "name": "Dior",
   "description": "",
-  "image": ""
+  "image": "https://i.pinimg.com/originals/47/e3/dd/47e3dd97d263838fe27a36709293315f.jpg"
 },
 {
   "_id": {
@@ -44,7 +44,7 @@
   },
   "name": "Chloé",
   "description": "",
-  "image": ""
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAXRReoSGbkUu5p-rcVYtfCBB8AqXoSUJUEQ&s"
 },
 {
   "_id": {
@@ -52,5 +52,5 @@
   },
   "name": "Balenciaga",
   "description": "",
-  "image": ""
+  "image": "https://customisation.club/cdn/shop/products/Balenciaga-logo-WHITE_32038be0-6827-46db-b519-617b2cffb37e_1890x.jpg?v=1682791240"
 }]
