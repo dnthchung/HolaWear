@@ -18,6 +18,11 @@ orderRouter.post("/approve-order", OrderController.approveOrder);
 orderRouter.post("/cancel-order", OrderController.cancelOrder);
 
 // User payment (mark order as completed)
-orderRouter.post("/user-payment", OrderController.userPayment);
+orderRouter.post("/user-payment", OrderController.completedOrder);
 
+// Update order status and isPayment by order id
+orderRouter.put("/status/:id", OrderController.statusOrder);
+
+//get top products
+orderRouter.get("/top-products", OrderController.getTopProducts);
 module.exports = orderRouter;

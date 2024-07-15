@@ -67,12 +67,12 @@ const RegisterPage = () => {
 
             <div className="flex items-center my-4">
               <hr className="flex-grow border-t border-gray-300" />
-              <span className="mx-2 text-gray-600">or continue with</span>
-              <hr className="flex-grow border-t border-gray-300" />
+              {/* <span className="mx-2 text-gray-600">or continue with</span>
+              <hr className="flex-grow border-t border-gray-300" /> */}
             </div>
-            <button className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded flex items-center justify-center mt-4">
+            {/* <button className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded flex items-center justify-center mt-4">
               <FaGoogle className="mr-2" /> Google
-            </button>
+            </button> */}
             <div className="">
               <p className="text-center text-gray-600 text-xs mt-4">
                 By clicking continue, you agree to our{" "}

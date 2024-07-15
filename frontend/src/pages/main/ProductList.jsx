@@ -8,6 +8,8 @@ const ProductList = ({ category }) => {
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([0, 1000000]);
   const [selectedBrands, setSelectedBrands] = useState([]); // Ensure this is initialized as an array
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTypes, setSelectedTypes] = useState([]);
   const [showSidebar, setShowSidebar] = useState(true);
   const [sortOption, setSortOption] = useState("newest");
   const [categories, setCategories] = useState([]);
@@ -69,11 +71,13 @@ const ProductList = ({ category }) => {
     const matchesCategory = product.category?.name.toLowerCase() === category.toLowerCase();
     const matchesColor = selectedColors.length === 0 || selectedColors.some((color) => product.stockDetails.some((detail) => detail.colorCode === color));
     const matchesPrice = product.price >= selectedPrices[0] && product.price <= selectedPrices[1];
-    const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand.name);
+    const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+    const matchesTag = selectedTags.length === 0 || selectedTags.includes(product.tag);
+    const matchesType = selectedTypes.length === 0 || selectedTypes.includes(product.type);
     const matchesSearchQuery = product.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesStatus = product.availabilityStatus?.toLowerCase() === "in stock"; // Use availabilityStatus
-
-    return matchesCategory && matchesColor && matchesPrice && matchesBrand && matchesSearchQuery && matchesStatus;
+    // console.log({ matchesCategory, matchesColor, matchesPrice, matchesBrand, matchesTag, matchesType, matchesSearchQuery, matchesStatus });
+    return matchesCategory && matchesColor && matchesPrice && matchesBrand && matchesType && matchesTag && matchesSearchQuery && matchesStatus;
   });
 
   const sortedProducts = sortProducts(filteredProducts);
@@ -89,6 +93,10 @@ const ProductList = ({ category }) => {
             setSelectedPrices={setSelectedPrices}
             selectedBrands={selectedBrands}
             setSelectedBrands={setSelectedBrands}
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
+            selectedTypes={selectedTypes}
+            setSelectedTypes={setSelectedTypes}
             priceRange={selectedPrices}
             setPriceRange={setSelectedPrices}
           />
@@ -106,7 +114,7 @@ const ProductList = ({ category }) => {
               </select>
             </div>
           </div>
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 w-1/4">
             <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search by product title" className="bg-gray-200 p-2 rounded w-full" />
           </div>
           <h1 className="text-3xl font-bold mb-4">

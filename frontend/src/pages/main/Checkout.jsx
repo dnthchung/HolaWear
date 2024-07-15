@@ -35,7 +35,9 @@ const Checkout = () => {
       toast.error("Please select a delivery address");
       return;
     }
+
     const orderItems = products.map((product) => ({
+      thumbnail: product.thumbnail,
       productTitle: product.productTitle,
       productId: product.productId,
       color: product.color,
@@ -43,6 +45,7 @@ const Checkout = () => {
       quantity: product.quantity,
       price: product.price,
     }));
+
     const shippingAddress = addresses.find((address) => address._id === selectedAddress);
     const totalPrice = parseFloat(total.replace(/,/g, ""));
 
@@ -69,8 +72,26 @@ const Checkout = () => {
         }, 2000);
       }
     } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 2xx
+        if (error.response.status === 404) {
+          toast.error("User or product not found");
+        } else if (error.response.status === 400) {
+          toast.error(error.response.data.message || "An error occurred while creating the order. Please try again later.");
+          setTimeout(() => {
+            navigate("/cart");
+          }, 2000);
+        } else {
+          toast.error("An error occurred: " + error.response.data.message);
+        }
+      } else if (error.request) {
+        // No response was received from the server
+        toast.error("No response from server. Please try again later.");
+      } else {
+        // Something happened while setting up the request
+        toast.error("An error occurred while creating the order: " + error.message);
+      }
       console.error("Error creating order", error);
-      toast.error("An error occurred while creating the order");
     }
   };
 

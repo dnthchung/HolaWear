@@ -41,11 +41,6 @@ const ProductCard = ({ product }) => {
             <span className="text-gray-600 ml-2">({product.reviews.length} reviews)</span>
           </div>
           <p className="text-xl font-bold text-gray-800">{product.price} đ</p>
-          <div className="flex space-x-2 mt-2">
-            {product.stockDetails.map((detail) => (
-              <div key={detail.colorCode} className="w-5 h-5 rounded-full" style={{ backgroundColor: detail.colorCode }}></div>
-            ))}
-          </div>
         </div>
       </Link>
     </div>

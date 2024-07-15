@@ -1,87 +1,61 @@
 const Brand = require("../models/brand.model");
 
-async function getAllBrands(req, res, next) {
+// GET all tags
+exports.getAllBrands = async (req, res) => {
   try {
     const brands = await Brand.find();
-    res.json(brands);
-  } catch (err) {
-    next(err);
+    res.status(200).json(brands);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
-}
+};
 
-async function getBrandById(req, res, next) {
+// GET a single tag by ID
+exports.getBrandById = async (req, res) => {
   try {
     const brand = await Brand.findById(req.params.id);
-    if (brand && brand.status) {
-      res.json(brand);
-    } else {
-      res.status(404).json({ message: "Brand not found" });
+    if (!brand) {
+      return res.status(404).json({ message: "Brand not found" });
     }
-  } catch (err) {
-    next(err);
+    res.status(200).json(brand);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
-}
+};
 
-async function createBrand(req, res, next) {
+// POST create a new tag
+exports.createBrand = async (req, res) => {
+  const brand = new Brand(req.body);
   try {
-    const brand = new Brand({
-      name: req.body.name,
-      description: req.body.description,
-      image: req.body.image,
-      status: true, // Default to active
-    });
     const newBrand = await brand.save();
     res.status(201).json(newBrand);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
   }
-}
+};
 
-async function updateBrand(req, res, next) {
+// PUT update a tag by ID
+exports.updateBrand = async (req, res) => {
   try {
-    const brand = await Brand.findById(req.params.id);
+    const brand = await Brand.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!brand) {
       return res.status(404).json({ message: "Brand not found" });
     }
-
-    if (req.body.name != null) {
-      brand.name = req.body.name;
-    }
-    if (req.body.description != null) {
-      brand.description = req.body.description;
-    }
-    if (req.body.image != null) {
-      brand.image = req.body.image;
-    }
-    if (req.body.status != null) {
-      brand.status = req.body.status;
-    }
-
-    const updatedBrand = await brand.save();
-    res.json(updatedBrand);
-  } catch (err) {
-    next(err);
+    res.status(200).json(brand);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
   }
-}
+};
 
-async function disableBrand(req, res, next) {
+// DELETE delete a tag by ID
+exports.deleteBrand = async (req, res) => {
   try {
-    const brand = await Brand.findById(req.params.id);
+    const brand = await Brand.findByIdAndUpdate(req.params.id, { status: false }, { new: true });
     if (!brand) {
       return res.status(404).json({ message: "Brand not found" });
     }
-    brand.status = false;
-    await brand.save();
-    res.json({ message: "Brand disabled" });
-  } catch (err) {
-    next(err);
+    res.status(200).json({ message: "Brand deleted successfully by set status to false" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
-}
-
-module.exports = {
-  getAllBrands,
-  getBrandById,
-  createBrand,
-  updateBrand,
-  disableBrand,
 };

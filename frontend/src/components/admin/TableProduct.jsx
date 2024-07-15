@@ -40,6 +40,9 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
   const [productToDelete, setProductToDelete] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
@@ -137,12 +140,26 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
       });
   };
 
+  const fetchProductDetails = (productId) => {
+    axios
+      .get(`http://localhost:9999/api/product/get-detail-product/${productId}`)
+      .then((response) => {
+        setSelectedProduct(response.data);
+        setDialogOpen(true);
+      })
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+        toast.error("Failed to fetch product details");
+      });
+  };
+
   const filteredProducts = productData.filter(
     (product) =>
       product.title.toLowerCase().includes(searchTerm.toLowerCase()) && (selectedCategory ? product.category === selectedCategory : true) && (selectedTag ? product.tag === selectedTag : true),
   );
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
   const handleChangePage = (newPage) => {
     setCurrentPage(newPage);
   };
@@ -267,10 +284,99 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
                   <div className="text-sm text-gray-900">{product.createdAt ? format(parseISO(product.createdAt), "HH:mm:ss dd-MM-yyyy") : "N/A"}</div>
                 </td>
                 <td className="px-6 py-4 text-sm font-medium flex items-center">
-                  <button className="bg-white hover:bg-gray-50 text-[#7D4600] hover:text-indigo-900 py-1 px-2 border border-gray-200 rounded shadow">
-                    <Eye className="h-5 w-5 hover:opacity-85" />
-                  </button>
-                  {/* edit price */}
+                  <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                    <DialogTrigger asChild>
+                      <button
+                        className="bg-white hover:bg-gray-50 text-[#7D4600] hover:text-indigo-900 py-1 px-2 border border-gray-200 rounded shadow"
+                        onClick={() => fetchProductDetails(product._id)}
+                      >
+                        <Eye className="h-5 w-5 hover:opacity-85" />
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Product Details</DialogTitle>
+                        <DialogDescription>View details of: {selectedProduct && selectedProduct.title}</DialogDescription>
+                      </DialogHeader>
+                      <hr />
+                      {selectedProduct && (
+                        <div className="grid grid-cols-2 gap-4">
+                          {/* Information */}
+                          <div>
+                            <div className="grid grid-cols-2 gap-2">
+                              <div className="font-bold">
+                                <p>Title:</p>
+                                <p>Description:</p>
+                                <p>Category:</p>
+                                <p>Tag:</p>
+                                <p>Stock:</p>
+                                <p>Price:</p>
+                                <p>Availability Status:</p>
+                                <p>Created At:</p>
+                              </div>
+                              <div>
+                                <p className="truncate">{selectedProduct.title}</p>
+                                <p className="truncate">{selectedProduct.description}</p>
+                                <p className="truncate">{selectedProduct.category.name}</p>
+                                <p className="truncate">{selectedProduct.tag.name}</p>
+                                <p>{selectedProduct.stock}</p>
+                                <p>{selectedProduct.price} vnd</p>
+                                {selectedProduct.availabilityStatus === "InActive" ? (
+                                  <p className="text-red-500 italic font-semibold">InActive</p>
+                                ) : (
+                                  <p className="text-green-500 italic font-semibold">{selectedProduct.availabilityStatus}</p>
+                                )}
+                                <p>{selectedProduct.createdAt ? format(parseISO(selectedProduct.createdAt), "HH:mm:ss dd-MM-yyyy") : "N/A"}</p>
+                              </div>
+                            </div>
+
+                            {/* Stock Details */}
+                            <div>
+                              <strong>Stock Details:</strong>
+                              {selectedProduct.stockDetails.length > 0 ? (
+                                <table className="table-auto border-collapse border border-gray-300 mt-2">
+                                  <thead>
+                                    <tr>
+                                      <th className="border border-gray-300 p-2">Color</th>
+                                      {selectedProduct.stockDetails[0].details.map((detail) => (
+                                        <th key={detail.size} className="border border-gray-300 p-2">
+                                          Size {detail.size}
+                                        </th>
+                                      ))}
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {selectedProduct.stockDetails.map((stockDetail) => (
+                                      <tr key={stockDetail._id}>
+                                        <td className="border border-gray-300 p-2" style={{ backgroundColor: stockDetail.colorCode, color: "#fff", textAlign: "center" }}></td>
+                                        {stockDetail.details.map((detail) => (
+                                          <td key={detail._id} className="border border-gray-300 p-2 text-center">
+                                            {detail.quantity}
+                                          </td>
+                                        ))}
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              ) : (
+                                <p className="text-sm text-red-500 italic mt-2">The product is not currently in stock!</p>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Thumbnail */}
+                          <div className="flex items-center justify-center">
+                            <div>
+                              <img src={selectedProduct.thumbnail} alt={selectedProduct.title} className="w-44 h-44 object-cover rounded-lg" />
+                              <p className="text-xs flex justify-center">
+                                <i>-- Thumbnail --</i>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </DialogContent>
+                  </Dialog>
                   <Dialog>
                     <DialogTrigger className="ml-4 bg-white hover:bg-gray-50 text-[#6E44FF] hover:text-indigo-900 py-1 px-2 border border-gray-200 rounded shadow">
                       <TooltipProvider>
@@ -312,7 +418,6 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
-                  {/* add depot */}
                   <Dialog>
                     <DialogTrigger className="ml-4 bg-white hover:bg-gray-50 text-[#FB5012] hover:text-indigo-900 py-1 px-2 border border-gray-200 rounded shadow">
                       <TooltipProvider>
@@ -358,7 +463,8 @@ const TableProduct = ({ productData, categories, tags, types, brands }) => {
       </div>
       <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
         <span>
-          Showing {currentProducts.length} of {filteredProducts.length} data
+          {" "}
+          Showing {currentProducts.length} of {filteredProducts.length} data{" "}
         </span>
         <div className="flex space-x-1">
           <button onClick={() => handleChangePage(currentPage - 1)} disabled={currentPage === 1} className="px-2 py-1 border rounded">
