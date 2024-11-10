@@ -268,5 +268,4 @@
 21. Làm sub / unsub mail cho người dùng nhận tin tức từ c hàng về các chương trình mkt
 22. Làm xác thực tài khaonr người dùng qua mail xem có phải mail real acc real không, nếu sau khoảng thời gian nào đó mà không xác nhận account, xóa acc (ko ban - vì nhỡ họ quên) - đồng thời nếu khong xác nhận acc thì không cho login vào hệ thống - rõ ràng
 
-Danh sách này sẽ giúp bạn dễ dàng theo dõi và quản lý các công việc đã hoàn thành và cần làm.
 
