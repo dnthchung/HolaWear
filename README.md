@@ -124,9 +124,7 @@
 
 </details>
 
-
-
-
+### Note
 - ok - thêm chỉnh sửa giá tiền cho từng product
 - ok -  thêm ghi chú ở quản lý product là : chỉ sản phẩm nào có trạng thái là "In Stock" + có "Color - có số lượng để bày bán" mới show ra ngoài
 - ok - chỉnh sử FE show product list data như trên
