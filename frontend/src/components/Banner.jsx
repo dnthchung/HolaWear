@@ -32,6 +32,7 @@ const Banner = () => {
           Shop Now
         </button>
       </div>
+
       <div className="md:w-1/2 p-4">
         <Slider {...settings}>
           <div className="w-full md:h-80 flex items-center justify-center ">
