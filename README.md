@@ -8,36 +8,28 @@
 
 ## **Project Members**
 
-| **Name**          | **Student ID** | **Role**             |
-| ----------------- | -------------- | -------------------- |
-| Doan Thanh Chung  | HE176077       | Team Lead, Developer |
-| Van Minh Tuan     | HE170999       | Developer            |
-| Nguyen Thanh Tung | HE172838       | Developer            |
-| Ha Van Manh       | HE176110       | Developer            |
-| Do Duc Thien      | HE176216       | Developer            |
-
----
+| **Name**          | **Student ID** | **Role**              |
+| ----------------- | -------------- | --------------------- |
+| Doan Thanh Chung  | HE176077       | Team Lead, Full Stack |
+| Van Minh Tuan     | HE170999       | Full Stack            |
+| Nguyen Thanh Tung | HE172838       | Back End              |
+| Ha Van Manh       | HE176110       | Full Stack            |
+| Do Duc Thien      | HE176216       | Full Stack            |
 
 ## **Overview**
 
 **HolaWear** is a professional e-commerce web application for purchasing clothing. It supports roles like Admin, Seller, and User, enabling product management, sales tracking, and user interaction. The platform ensures a seamless shopping experience with a responsive design, secure authentication, and modern UI components.
 
----
-
 ## **Demo Links**
 
 - **[Demo Video 1](#)**
 
----
-
 ## **Technologies Used**
 
-- **Frontend:** ReactJS, Tailwind CSS, Shadn UI
-- **Backend:** NodeJS, ExpressJS, Mongoose, JWT, Bcrypt
-- **Database & Storage:** MongoDB Atlas(+ local), Cloudinary
-- **Architecture:** MERN Stack
-
----
+- **Frontend:** `ReactJS`, `Tailwind CSS`, `Shadn UI`
+- **Backend:** `NodeJS`, `ExpressJS`, `Mongoose`, `JWT`
+- **Database & Storage:** `MongoDB Atlas(+ local)`, `Cloudinary`
+- **Architecture:** `MERN Stack`
 
 ## **Key Features**
 
@@ -58,16 +50,12 @@
 - **User Management:** Approve, ban, and manage users and sellers.
 - **System Monitoring:** Generate performance reports and system logs.
 
----
-
 ## **Project Highlights**
 
 - Modern responsive UI with Tailwind CSS and Shadn UI components.
 - Secure authentication with JWT and Bcrypt.
 - REST API for seamless client-server communication.
 - Cloud storage integration with MongoDB Atlas and Cloudinary.
-
----
 
 ## **Folder Structure**
 
@@ -106,8 +94,6 @@
 ```
 
 </details>
-
----
 
 ### **Frontend**
 
@@ -158,8 +144,6 @@
 ```
 
 </details>
-
----
 
 ## **Demo Images**
 
