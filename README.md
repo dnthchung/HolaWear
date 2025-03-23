@@ -33,35 +33,43 @@
 
 ## **Key Features**
 
-### **User Functions:**
+HolaWear is a full-stack e-commerce platform for clothing with the following key characteristics:
 
-- **Account Management:** Register, log in, and manage profiles.
-- **Product Browsing:** Explore products with filters and search features.
-- **Cart & Checkout:** Add items to the cart and securely process payments.
-- **Order Tracking:** Track order history and delivery status.
+**1. Architecture:**
 
-### **Seller Functions:**
+* MERN Stack (MongoDB, Express.js, React, Node.js)
+* Mobile app in Android XML (Java)
+* Uses Tailwind CSS and Shadcn UI for frontend styling
 
-- **Product Management:** Add, edit, and delete products.
-- **Sales Management:** View order statistics and transaction history.
+**2. Core Features:**
 
-### **Admin Functions:**
+* Multi-role system (Admin, Seller, User)
+* Product catalog with categories, brands, and filters
+* Shopping cart and checkout system
+* User authentication and profile management
+* Order tracking
+* Wishlist functionality
 
-- **User Management:** Approve, ban, and manage users and sellers.
-- **System Monitoring:** Generate performance reports and system logs.
+**3. Technical Highlights:**
 
-## **Project Highlights**
+* JWT-based authentication
+* REST API architecture
+* Cloud storage integration (MongoDB Atlas, Cloudinary)
+* Responsive design
+* Mobile app with Retrofit for API communication
 
-- Modern responsive UI with Tailwind CSS and Shadn UI components.
-- Secure authentication with JWT and Bcrypt.
-- REST API for seamless client-server communication.
-- Cloud storage integration with MongoDB Atlas and Cloudinary.
+**4. Security Features:**
+
+* Protected routes based on user roles
+* Secure password handling with bcrypt
+* JWT token management
+* Cookie-based authentication
 
 ## **Folder Structure**
 
 ### **Backend**
 
-<details>  
+<details>
 <summary><strong>Folder Structure</strong></summary>
 
 ```plaintext
@@ -97,7 +105,7 @@
 
 ### **Frontend**
 
-<details>  
+<details>
 <summary><strong>Folder Structure</strong></summary>
 
 ```plaintext
@@ -147,7 +155,7 @@
 
 ## **Demo Images**
 
-<details>  
+<details>
 <summary><strong>Expand to View Screenshots</strong></summary>
 
 1. ![Demo Image 1](https://github.com/dnthchung/HolaWear/blob/main/image%20demo/Screenshot1.png?raw=true)
