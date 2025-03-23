@@ -155,9 +155,6 @@ HolaWear is a full-stack e-commerce platform for clothing with the following key
 
 ## **Demo Images**
 
-<details>
-<summary><strong>Expand to View Screenshots</strong></summary>
-
 1. ![Demo Image 1](https://raw.githubusercontent.com/dnthchung/HolaWear/refs/heads/main/web%20src/add-new-shipping-address.png)
 2. ![Demo Image 2](https://github.com/dnthchung/HolaWear/blob/main/web%20src/admin-dashboard.png?raw=true)
 3. ![Demo Image 3](https://github.com/dnthchung/HolaWear/blob/main/web%20src/all-products.png?raw=true)
@@ -171,8 +168,6 @@ HolaWear is a full-stack e-commerce platform for clothing with the following key
 11. ![Demo Image 11](https://github.com/dnthchung/HolaWear/blob/main/web%20src/profile-user.png?raw=true)
 12. ![Demo Image 12](https://github.com/dnthchung/HolaWear/blob/main/web%20src/shipping-address.png?raw=true)
 13. ![Demo Image 13](https://github.com/dnthchung/HolaWear/blob/main/web%20src/sign-up.png?raw=true)
-
-</details>
 
 ---
 
