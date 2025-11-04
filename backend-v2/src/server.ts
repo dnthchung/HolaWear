@@ -1,15 +1,16 @@
-import app from ".";
+import app from '.'
+import envConfig from './api/v1/config/env.config'
 
 async function startServer() {
   try {
     //start server
-    app.listen(3000, () => {
-      console.log(`Server is running on port 3000`);
-    });
+    app.listen(envConfig.PORT, () => {
+      console.log(`Server is running on port ${envConfig.PORT}`)
+    })
   } catch (error) {
-    console.error("Error starting server:", error);
-    process.exit(1);
+    console.error('Error starting server:', error)
+    process.exit(1)
   }
 }
 
-startServer();
+startServer()
