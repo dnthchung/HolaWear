@@ -2,5 +2,8 @@
   "watch": ["src", ".env"],
   "ext": ".ts,.js",
   "ignore": [],
-  "exec": "tsx server.ts NODE_ENV=dev"
+  "exec": "tsx src/server.ts",
+  "env": {
+    "NODE_ENV": "dev"
+  }
 }

@@ -18,6 +18,11 @@ export default [
       'prettier/prettier': [
         'warn',
         {
+          vars: 'all',
+          args: 'after-used',
+          ignoreRestSiblings: true,
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
           arrowParens: 'always',
           bracketSameLine: false,
           bracketSpacing: true,
