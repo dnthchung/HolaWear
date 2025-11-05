@@ -18,12 +18,6 @@ class DatabaseManager {
         maxPoolSize: 10,
       },
     },
-    holawear_v2_dev_db: {
-      uri: `${envConfig.DB_URI}`,
-      options: {
-        maxPoolSize: 10,
-      },
-    },
   }
 
   static getInstance(): DatabaseManager {

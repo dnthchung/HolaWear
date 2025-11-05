@@ -19,3 +19,7 @@ Chạy lại `npm run dev` hoặc `npx nodemon` để xem log. Nếu vẫn khôn
 3. Các biến môi trường trong `.env` đã được cấu hình đúng
 
 Nếu vẫn lỗi, gửi thông báo lỗi cụ thể để xử lý tiếp.
+
+---
+
+Request → Controller → Service → ShopRepository → BaseRepository → dbManager → MongoDB

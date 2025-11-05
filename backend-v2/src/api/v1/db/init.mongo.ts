@@ -10,7 +10,7 @@ class Database {
   async connect(_type = 'mongodb') {
     if (!this.isConnected) {
       try {
-        await dbManager.getConnection(envConfig.DB_NAME as 'holawear_v2_dev_db')
+        await dbManager.getConnection(envConfig.DB_NAME as 'holawear_v2_db')
         this.isConnected = true
       } catch (error) {
         console.log('❌ Error connect', error)
