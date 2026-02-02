@@ -10,11 +10,11 @@
 
 | **Name**          | **Student ID** | **Role**              |
 | ----------------- | -------------- | --------------------- |
-| Doan Thanh Chung  | HE176077       | Team Lead, Full Stack |
-| Van Minh Tuan     | HE170999       | Full Stack            |
-| Nguyen Thanh Tung | HE172838       | Back End              |
-| Ha Van Manh       | HE176110       | Full Stack            |
-| Do Duc Thien      | HE176216       | Full Stack            |
+| Doan Thanh Chung  | HE176077       | Lead, BE & FE         |
+| Van Minh Tuan     | HE170999       | BE & FE               |
+| Nguyen Thanh Tung | HE172838       | FE                   |
+| Ha Van Manh       | HE176110       | FE                    |
+| Do Duc Thien      | HE176216       | FE                    |
 
 ## **Overview**
 
