@@ -8,13 +8,13 @@
 
 ## **Project Members**
 
-| **Name**          | **Student ID** | **Role**              |
-| ----------------- | -------------- | --------------------- |
-| Doan Thanh Chung  | HE176077       | Lead, BE & FE         |
-| Van Minh Tuan     | HE170999       | BE & FE               |
-| Nguyen Thanh Tung | HE172838       | FE                   |
-| Ha Van Manh       | HE176110       | FE                    |
-| Do Duc Thien      | HE176216       | FE                    |
+| **Name**          | **Student ID** | **Role**      |
+| ----------------- | -------------- | ------------- |
+| Doan Thanh Chung  | HE176077       | Lead, BE & FE |
+| Van Minh Tuan     | HE170999       | BE & FE       |
+| Nguyen Thanh Tung | HE172838       | FE            |
+| Ha Van Manh       | HE176110       | FE            |
+| Do Duc Thien      | HE176216       | FE            |
 
 ## **Overview**
 
@@ -155,19 +155,19 @@ HolaWear is a full-stack e-commerce platform for clothing with the following key
 
 ## **Demo Images**
 
-1. ![Demo Image 1](https://raw.githubusercontent.com/dnthchung/HolaWear/refs/heads/main/web%20src/add-new-shipping-address.png)
-2. ![Demo Image 2](https://github.com/dnthchung/HolaWear/blob/main/web%20src/admin-dashboard.png?raw=true)
-3. ![Demo Image 3](https://github.com/dnthchung/HolaWear/blob/main/web%20src/all-products.png?raw=true)
-4. ![Demo Image 4](https://github.com/dnthchung/HolaWear/blob/main/web%20src/cart.png?raw=true)
-5. ![Demo Image 5](https://github.com/dnthchung/HolaWear/blob/main/web%20src/home.png?raw=true)
-6. ![Demo Image 6](https://github.com/dnthchung/HolaWear/blob/main/web%20src/log-in.png?raw=true)
-7. ![Demo Image 7](https://github.com/dnthchung/HolaWear/blob/main/web%20src/order-details.png?raw=true)
-8. ![Demo Image 8](https://github.com/dnthchung/HolaWear/blob/main/web%20src/order-list.png?raw=true)
-9. ![Demo Image 9](https://github.com/dnthchung/HolaWear/blob/main/web%20src/product-details-add-to-cart.png?raw=true)
-10. ![Demo Image 10](https://raw.githubusercontent.com/dnthchung/HolaWear/refs/heads/main/web%20src/product-details.gif)
-11. ![Demo Image 11](https://github.com/dnthchung/HolaWear/blob/main/web%20src/profile-user.png?raw=true)
-12. ![Demo Image 12](https://github.com/dnthchung/HolaWear/blob/main/web%20src/shipping-address.png?raw=true)
-13. ![Demo Image 13](https://github.com/dnthchung/HolaWear/blob/main/web%20src/sign-up.png?raw=true)
+1. ![Demo Image 1](https://raw.githubusercontent.com/dnthchung/HolaWear/refs/heads/main/resource/web%20src/add-new-shipping-address.png)
+2. ![Demo Image 2](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/admin-dashboard.png?raw=true)
+3. ![Demo Image 3](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/all-products.png?raw=true)
+4. ![Demo Image 4](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/cart.png?raw=true)
+5. ![Demo Image 5](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/home.png?raw=true)
+6. ![Demo Image 6](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/log-in.png?raw=true)
+7. ![Demo Image 7](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/order-details.png?raw=true)
+8. ![Demo Image 8](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/order-list.png?raw=true)
+9. ![Demo Image 9](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/product-details-add-to-cart.png?raw=true)
+10. ![Demo Image 10](https://raw.githubusercontent.com/dnthchung/HolaWear/refs/heads/main/resource/web%20src/product-details.gif)
+11. ![Demo Image 11](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/profile-user.png?raw=true)
+12. ![Demo Image 12](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/shipping-address.png?raw=true)
+13. ![Demo Image 13](https://github.com/dnthchung/HolaWear/blob/main/resource/web%20src/sign-up.png?raw=true)
 
 ## Contributing
 
