@@ -1,10 +1,16 @@
 {
   "folders": [
-	{
-		"path": "backend"
-	},
-	{
-		"path": "frontend"
-	}
-]
+		{
+			"path": "backend"
+		},
+		{
+			"path": "backend-ts"
+		},
+		{
+			"path": "mobile app"
+		},
+		{
+			"path": "frontend"
+		}
+	]
 }

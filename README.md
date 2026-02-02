@@ -10,11 +10,11 @@
 
 | **Name**          | **Student ID** | **Role**              |
 | ----------------- | -------------- | --------------------- |
-| Doan Thanh Chung  | HE176077       | Team Lead, Full Stack |
-| Van Minh Tuan     | HE170999       | Full Stack            |
-| Nguyen Thanh Tung | HE172838       | Back End              |
-| Ha Van Manh       | HE176110       | Full Stack            |
-| Do Duc Thien      | HE176216       | Full Stack            |
+| Doan Thanh Chung  | HE176077       | Lead, BE & FE         |
+| Van Minh Tuan     | HE170999       | BE & FE               |
+| Nguyen Thanh Tung | HE172838       | FE                   |
+| Ha Van Manh       | HE176110       | FE                    |
+| Do Duc Thien      | HE176216       | FE                    |
 
 ## **Overview**
 
@@ -37,33 +37,33 @@ HolaWear is a full-stack e-commerce platform for clothing with the following key
 
 **1. Architecture:**
 
-* MERN Stack (MongoDB, Express.js, React, Node.js)
-* Mobile app in Android XML (Java)
-* Uses Tailwind CSS and Shadcn UI for frontend styling
+- MERN Stack (MongoDB, Express.js, React, Node.js)
+- Mobile app in Android XML (Java)
+- Uses Tailwind CSS and Shadcn UI for frontend styling
 
 **2. Core Features:**
 
-* Multi-role system (Admin, Seller, User)
-* Product catalog with categories, brands, and filters
-* Shopping cart and checkout system
-* User authentication and profile management
-* Order tracking
-* Wishlist functionality
+- Multi-role system (Admin, Seller, User)
+- Product catalog with categories, brands, and filters
+- Shopping cart and checkout system
+- User authentication and profile management
+- Order tracking
+- Wishlist functionality
 
 **3. Technical Highlights:**
 
-* JWT-based authentication
-* REST API architecture
-* Cloud storage integration (MongoDB Atlas, Cloudinary)
-* Responsive design
-* Mobile app with Retrofit for API communication
+- JWT-based authentication
+- REST API architecture
+- Cloud storage integration (MongoDB Atlas, Cloudinary)
+- Responsive design
+- Mobile app with Retrofit for API communication
 
 **4. Security Features:**
 
-* Protected routes based on user roles
-* Secure password handling with bcrypt
-* JWT token management
-* Cookie-based authentication
+- Protected routes based on user roles
+- Secure password handling with bcrypt
+- JWT token management
+- Cookie-based authentication
 
 ## **Folder Structure**
 
@@ -168,6 +168,18 @@ HolaWear is a full-stack e-commerce platform for clothing with the following key
 11. ![Demo Image 11](https://github.com/dnthchung/HolaWear/blob/main/web%20src/profile-user.png?raw=true)
 12. ![Demo Image 12](https://github.com/dnthchung/HolaWear/blob/main/web%20src/shipping-address.png?raw=true)
 13. ![Demo Image 13](https://github.com/dnthchung/HolaWear/blob/main/web%20src/sign-up.png?raw=true)
+
+## Contributing
+
+Use the following commit message prefixes for contributions:
+
+- `chore:` Updates that don’t significantly affect the project (e.g., refactoring configs).
+- `feat:` Adding a new feature.
+- `fix:` Fixing a bug.
+- `docs:` Adding or updating documentation.
+- `perf:` Improving performance.
+- `refactor:` Refactoring code without changing its behavior.
+- `style:` Changes related to style that don’t affect logic (e.g., front-end UI changes).
 
 ---
 
